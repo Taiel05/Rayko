@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".site-header");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
@@ -8,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!target) return;
       event.preventDefault();
       const offset = target.getBoundingClientRect().top + window.scrollY - header.offsetHeight;
-      window.scrollTo({ top: offset, behavior: "smooth" });
+      window.scrollTo({ top: offset, behavior: prefersReducedMotion ? "auto" : "smooth" });
     });
   });
 
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function setError(field, message) {
     fields[field].input.classList.toggle("has-error", Boolean(message));
+    fields[field].input.setAttribute("aria-invalid", Boolean(message));
     fields[field].error.textContent = message || "";
   }
 

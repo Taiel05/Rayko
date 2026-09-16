@@ -9,7 +9,7 @@
   --accent-teal: #5cc2b8;
   --text-main: #eef4f7;
   --text-muted: #93a8b8;
-  --danger: #c1584a;
+  --danger: #e07a5f;
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "IBM Plex Sans", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
@@ -352,7 +352,8 @@ h1, h2, h3 {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  outline: none;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
   border-bottom-color: var(--accent);
 }
 
@@ -376,7 +377,7 @@ h1, h2, h3 {
 }
 
 .form-status.is-success { color: var(--accent); }
-.form-status.is-error { color: #e2643e; }
+.form-status.is-error { color: var(--danger); }
 
 /* Footer */
 .site-footer {

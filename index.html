@@ -181,18 +181,18 @@
     <form class="contact-form" id="contact-form" action="https://formspree.io/f/xoevaojn" method="POST" novalidate>
       <label>
         <span class="field-label">Nombre</span>
-        <input type="text" name="nombre" id="campo-nombre">
-        <span class="field-error" id="error-nombre"></span>
+        <input type="text" name="nombre" id="campo-nombre" aria-describedby="error-nombre">
+        <span class="field-error" id="error-nombre" role="alert"></span>
       </label>
       <label>
         <span class="field-label">Email</span>
-        <input type="email" name="email" id="campo-email">
-        <span class="field-error" id="error-email"></span>
+        <input type="email" name="email" id="campo-email" aria-describedby="error-email">
+        <span class="field-error" id="error-email" role="alert"></span>
       </label>
       <label>
         <span class="field-label">Contanos tu proyecto</span>
-        <textarea name="mensaje" id="campo-mensaje" rows="4"></textarea>
-        <span class="field-error" id="error-mensaje"></span>
+        <textarea name="mensaje" id="campo-mensaje" rows="4" aria-describedby="error-mensaje"></textarea>
+        <span class="field-error" id="error-mensaje" role="alert"></span>
       </label>
       <button type="submit" class="btn-primary">Enviar</button>
       <p class="form-status" id="form-status" role="status"></p>
